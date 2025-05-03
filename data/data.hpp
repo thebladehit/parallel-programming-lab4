@@ -8,11 +8,19 @@
 // ІМ-22
 // 03.05.2025
 
-#include <iostream>
-#include "data.hpp"
-
 namespace data {
-  void hello(int i) {
-    std::cout << i << "From thread \n";
-  }
+  constexpr int N = 4;
+  constexpr int P = 4;
+  // constexpr int H = N / P; mb delete
+
+  // Variables
+  extern int p, d;
+
+  // Vectors
+  extern int A[N], B[N], Z[N];
+
+  // Matrixes
+  extern int MM[N][N], MX[N][N], MT[N][N];
+
+  void hello(int i);
 }
