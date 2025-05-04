@@ -100,7 +100,7 @@ int main() {
     }
 
     // copy a (B * Z)
-    #pragma omp critical(CS3)
+    #pragma omp critical(CS4)
     {
       ai = a;
     }
