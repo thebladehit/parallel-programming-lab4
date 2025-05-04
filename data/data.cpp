@@ -41,7 +41,7 @@ namespace data {
   }
 
   void multiplyVectorOnMatrix(int V[N], int M[N][N], int resV[N], int start, int end) {
-    // #pragma omp for
+    // #pragma omp for // add for more paralelism
     for (int i = start; i < end; i++) {
       resV[i] = 0;
       for (int j = 0; j < N; j++) {
@@ -51,13 +51,14 @@ namespace data {
   }
 
   void multiplyVectorOnScalar(int V[N], int num, int resV[N], int start, int end) {
-  // #pragma omp for
+  // #pragma omp for // add for more paralelism
     for (int i = start; i < end; i++) {
       resV[i] = V[i] * num;
     }
   }
 
   void multiplyMatrices(int firstM[N][N], int secondM[N][N], int resM[N][N], int start, int end) {
+    // #pragma omp for // add for more paralelism
     for (int i = 0; i < N; i++) {
       for (int j = start; j < end; j++) {
         resM[i][j] = 0;
@@ -69,7 +70,7 @@ namespace data {
   }
 
   void sumVectors(int firstV[N], int secondV[N], int resV[N], int start, int end) {
-    // #pragma omp for
+    // #pragma omp for // add for more paralelism
     for (int i = start; i < end; i++) {
       resV[i] = firstV[i] + secondV[i];
     }
