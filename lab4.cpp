@@ -11,13 +11,15 @@
 #include <iostream>
 #include "data/data.hpp"
 #include <omp.h>
+#include <chrono>
 
 int main() {
+  // execution time 
+  auto start = std::chrono::high_resolution_clock::now();
+
   // intermediate variables
   int dBZMM[data::N];
   int a = 0;
-
-  // add time tracking 
 
   std::cout << "Main thread started" << std::endl;
 
@@ -126,6 +128,10 @@ int main() {
 
   std::cout << "Main thread finished" << std::endl;
 
+  auto end = std::chrono::high_resolution_clock::now();
+  std::chrono::duration<double> duration = end - start;
+
+  std::cout << "Execution time: " << duration.count() << " s\n";
 
   return 0;
 }
